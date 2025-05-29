@@ -1,9 +1,0 @@
-black_scorch
-fusarium_wilt
-healthy
-leaf_spots
-magnesium_deficiency
-manganese_deficiency
-parlatoria_blanchardi
-potassium_deficiency
-rachis_blight
