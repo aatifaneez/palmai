@@ -1,0 +1,318 @@
+{
+  "black_scorch": {
+    "name": "Black Scorch",
+    "description": "Black scorch is a fungal disease that causes dark, burnt-looking patches on palm fronds. It typically occurs during periods of high humidity and poor air circulation.",
+    "symptoms": [
+      "Dark brown to black lesions on fronds",
+      "Burnt appearance on leaf margins",
+      "Progressive yellowing and browning",
+      "Premature frond drop"
+    ],
+    "causes": [
+      "Fungal infection (Pestalotiopsis species)",
+      "High humidity conditions",
+      "Poor air circulation",
+      "Water stress"
+    ],
+    "treatment": [
+      "Improve air circulation around the palm",
+      "Remove affected fronds completely",
+      "Apply copper-based fungicide spray",
+      "Reduce overhead watering",
+      "Ensure proper drainage"
+    ],
+    "prevention": [
+      "Maintain good air circulation",
+      "Avoid overhead watering",
+      "Regular pruning of dead fronds",
+      "Monitor humidity levels"
+    ],
+    "severity": "Moderate",
+    "color": "orange"
+  },
+  "fusarium_wilt": {
+    "name": "Fusarium Wilt",
+    "description": "Fusarium wilt is a serious vascular disease caused by soil-borne fungi that blocks the palm's water transport system, leading to progressive decline and death.",
+    "symptoms": [
+      "Yellowing of lower fronds progressing upward",
+      "Wilting despite adequate soil moisture",
+      "Brown streaking in leaf stems",
+      "One-sided frond death",
+      "Stunted new growth"
+    ],
+    "causes": [
+      "Fusarium oxysporum fungus",
+      "Soil-borne pathogen",
+      "Wounds in root system",
+      "Contaminated tools or soil"
+    ],
+    "treatment": [
+      "Remove and destroy affected palms immediately",
+      "Soil fumigation may be necessary",
+      "Avoid planting susceptible species in affected soil",
+      "Disinfect tools between plants",
+      "Apply systemic fungicides (limited effectiveness)"
+    ],
+    "prevention": [
+      "Plant disease-resistant varieties",
+      "Ensure proper drainage",
+      "Avoid wounding roots during maintenance",
+      "Quarantine new plants",
+      "Use sterile planting media"
+    ],
+    "severity": "Severe",
+    "color": "red"
+  },
+  "healthy": {
+    "name": "Healthy Palm",
+    "description": "Your palm tree appears to be in excellent health! The leaves show vibrant green coloration and proper structure with no signs of disease or deficiency.",
+    "symptoms": [
+      "Vibrant green fronds",
+      "Normal leaf structure",
+      "No discoloration or spots",
+      "Good overall vigor"
+    ],
+    "causes": [
+      "Proper care and maintenance",
+      "Adequate nutrition",
+      "Good growing conditions",
+      "Disease-free environment"
+    ],
+    "treatment": [
+      "Continue current care routine",
+      "Regular monitoring for changes",
+      "Maintain proper watering schedule",
+      "Keep up with fertilization program"
+    ],
+    "prevention": [
+      "Continue regular maintenance",
+      "Monitor for early signs of problems",
+      "Maintain proper nutrition",
+      "Ensure adequate drainage"
+    ],
+    "severity": "None",
+    "color": "green"
+  },
+  "leaf_spots": {
+    "name": "Leaf Spots",
+    "description": "Leaf spot diseases are caused by various fungi and bacteria, creating circular or irregular spots on palm fronds that can merge and cause significant leaf damage.",
+    "symptoms": [
+      "Circular brown or black spots on fronds",
+      "Yellow halos around spots",
+      "Spots may merge to form larger lesions",
+      "Premature leaf yellowing"
+    ],
+    "causes": [
+      "Fungal or bacterial pathogens",
+      "High humidity and wet conditions",
+      "Poor air circulation",
+      "Overhead watering"
+    ],
+    "treatment": [
+      "Remove severely affected fronds",
+      "Apply copper-based fungicide",
+      "Improve air circulation",
+      "Reduce leaf wetness duration",
+      "Adjust watering practices"
+    ],
+    "prevention": [
+      "Water at soil level, not on leaves",
+      "Ensure good air circulation",
+      "Remove debris around palm base",
+      "Regular inspection and early intervention"
+    ],
+    "severity": "Moderate",
+    "color": "orange"
+  },
+  "magnesium_deficiency": {
+    "name": "Magnesium Deficiency",
+    "description": "Magnesium deficiency appears as distinctive yellowing of older fronds while newer growth remains green. It's one of the most common nutritional disorders in palms.",
+    "symptoms": [
+      "Yellow bands along frond margins",
+      "Older fronds affected first",
+      "Green midrib with yellow edges",
+      "Gradual progression to newer fronds",
+      "Frond tips may turn brown"
+    ],
+    "causes": [
+      "Insufficient magnesium in soil",
+      "High potassium levels blocking uptake",
+      "Sandy soils with poor retention",
+      "Excessive rainfall leaching nutrients"
+    ],
+    "treatment": [
+      "Apply magnesium sulfate (Epsom salt)",
+      "Use palm-specific fertilizer with magnesium",
+      "Foliar application for quick results",
+      "Reduce high potassium fertilizers",
+      "Improve soil organic matter"
+    ],
+    "prevention": [
+      "Regular soil testing",
+      "Balanced fertilization program",
+      "Use slow-release palm fertilizers",
+      "Mulch to reduce nutrient leaching"
+    ],
+    "severity": "Moderate",
+    "color": "orange"
+  },
+  "manganese_deficiency": {
+    "name": "Manganese Deficiency",
+    "description": "Manganese deficiency causes distinctive symptoms on newer fronds, with yellowing between leaf veins while the veins themselves remain green, creating a striped appearance.",
+    "symptoms": [
+      "Yellow striping on new fronds",
+      "Green veins with yellow tissue between",
+      "Stunted new growth",
+      "Frizzled or deformed new leaves",
+      "Progressive weakening"
+    ],
+    "causes": [
+      "High soil pH reducing availability",
+      "Waterlogged soil conditions",
+      "Excessive iron or zinc levels",
+      "Sandy soils low in manganese"
+    ],
+    "treatment": [
+      "Apply manganese sulfate to soil",
+      "Foliar spray with manganese chelate",
+      "Lower soil pH if too alkaline",
+      "Improve drainage if waterlogged",
+      "Use palm fertilizer with micronutrients"
+    ],
+    "prevention": [
+      "Maintain proper soil pH (6.0-7.0)",
+      "Ensure good drainage",
+      "Regular micronutrient applications",
+      "Avoid over-fertilizing with iron"
+    ],
+    "severity": "Moderate",
+    "color": "orange"
+  },
+  "parlatoria_blanchardi": {
+    "name": "Parlatoria Scale",
+    "description": "Parlatoria blanchardi is a scale insect that forms circular, grayish-white covers on palm fronds, feeding on plant juices and causing yellowing and decline.",
+    "symptoms": [
+      "Small, circular white or gray scales on fronds",
+      "Yellowing of affected fronds",
+      "Reduced palm vigor",
+      "Sticky honeydew on leaves",
+      "Premature frond drop"
+    ],
+    "causes": [
+      "Scale insect infestation",
+      "Warm, dry conditions favoring reproduction",
+      "Stressed or weakened palms",
+      "Introduction from infected plants"
+    ],
+    "treatment": [
+      "Apply horticultural oil spray",
+      "Use systemic insecticides",
+      "Remove heavily infested fronds",
+      "Increase humidity around palm",
+      "Regular monitoring and treatment"
+    ],
+    "prevention": [
+      "Quarantine new plants",
+      "Regular inspection for early detection",
+      "Maintain palm health and vigor",
+      "Control ant populations that protect scales"
+    ],
+    "severity": "Moderate",
+    "color": "orange"
+  },
+  "potassium_deficiency": {
+    "name": "Potassium Deficiency",
+    "description": "Potassium deficiency is extremely common in palms and appears as orange or brown spotting on older fronds, progressing to necrotic areas and frond death.",
+    "symptoms": [
+      "Orange to brown spots on older fronds",
+      "Translucent yellow spots that turn necrotic",
+      "Spots progress from leaf tips inward",
+      "Older fronds affected first",
+      "Reduced flowering and fruiting"
+    ],
+    "causes": [
+      "Insufficient potassium in soil",
+      "High magnesium levels interfering with uptake",
+      "Sandy soils with poor retention",
+      "Frequent rainfall leaching nutrients"
+    ],
+    "treatment": [
+      "Apply potassium sulfate fertilizer",
+      "Use palm-specific fertilizer high in potassium",
+      "Avoid chloride-based potassium sources",
+      "Apply slow-release fertilizers",
+      "Improve soil organic matter"
+    ],
+    "prevention": [
+      "Regular fertilization with palm fertilizer",
+      "Soil testing for nutrient levels",
+      "Proper fertilizer ratios (3-1-3 N-P-K minimum)",
+      "Mulching to reduce leaching"
+    ],
+    "severity": "Moderate",
+    "color": "orange"
+  },
+  "rachis_blight": {
+    "name": "Rachis Blight",
+    "description": "Rachis blight affects the central stem (rachis) of palm fronds, causing browning and death of the rachis which leads to frond collapse and death.",
+    "symptoms": [
+      "Brown to black discoloration of frond rachis",
+      "Fronds collapse and hang down",
+      "Dark streaking along the rachis",
+      "Leaflets remain green initially",
+      "Progressive frond death"
+    ],
+    "causes": [
+      "Fungal pathogens (various species)",
+      "Bacterial infections",
+      "Wounding or mechanical damage",
+      "High humidity and wet conditions"
+    ],
+    "treatment": [
+      "Remove affected fronds immediately",
+      "Disinfect pruning tools between cuts",
+      "Apply copper-based fungicides",
+      "Improve air circulation",
+      "Reduce overhead watering"
+    ],
+    "prevention": [
+      "Proper pruning techniques",
+      "Tool sanitation",
+      "Avoid wounding during maintenance",
+      "Good air circulation",
+      "Preventive fungicide applications"
+    ],
+    "severity": "Severe",
+    "color": "red"
+  },
+  "unknown": {
+    "name": "Unknown Condition",
+    "description": "The analysis could not confidently identify a specific condition. This could be due to image quality, unusual symptoms, or multiple conditions present simultaneously.",
+    "symptoms": [
+      "Unclear or multiple symptoms present",
+      "Image quality may be insufficient",
+      "Unusual or atypical presentation"
+    ],
+    "causes": [
+      "Multiple factors or conditions",
+      "Environmental stress",
+      "Combination of diseases",
+      "Image quality limitations"
+    ],
+    "treatment": [
+      "Consult with a plant pathologist",
+      "Take additional high-quality photos",
+      "Monitor palm for symptom development",
+      "Consider professional diagnosis",
+      "General palm care maintenance"
+    ],
+    "prevention": [
+      "Regular monitoring and inspection",
+      "Maintain optimal growing conditions",
+      "Proper nutrition and watering",
+      "Early intervention when problems arise"
+    ],
+    "severity": "Unknown",
+    "color": "gray"
+  }
+}

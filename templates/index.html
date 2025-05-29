@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palm Tree Disease Detector - AI-Powered Plant Health Analysis</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/80 dark:bg-gray-900/80 border-b border-gray-200 dark:border-gray-700">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="logo-container">
+                        <i class="fas fa-leaf text-2xl text-emerald-600 dark:text-emerald-400"></i>
+                    </div>
+                    <span class="text-lg font-semibold text-gray-900 dark:text-white">PalmAI</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="theme-toggle" class="theme-toggle-btn">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    <button id="help-btn" class="modern-btn-secondary">
+                        <i class="fas fa-question-circle mr-2"></i>Help
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg-pattern"></div>
+        <div class="container mx-auto px-6 pt-32 pb-20">
+            <div class="text-center max-w-5xl mx-auto">
+                <div class="mb-8 animate-fade-in">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">Palm Tree Disease</span><br>
+                        <span class="gradient-text">Detector</span>
+                    </h1>
+                    <div class="subtitle-container">
+                        <p class="hero-subtitle">
+                            AI-Powered Plant Health Analysis for Professional Diagnostics
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Disease Types</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">80%</div>
+                        <div class="stat-label">Accuracy</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Available</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container mx-auto px-6 py-16">
+
+        <!-- Upload & Analysis Section -->
+        <section class="grid lg:grid-cols-2 gap-12 mb-20">
+            <!-- Upload Area -->
+            <div class="upload-card">
+                <div class="card-header">
+                    <div class="flex items-center space-x-3">
+                        <div class="icon-container">
+                            <i class="fas fa-camera-retro"></i>
+                        </div>
+                        <h3 class="card-title">Upload Plant Image</h3>
+                    </div>
+                </div>
+                
+                <form id="upload-form" enctype="multipart/form-data">
+                    <div id="upload-area" class="modern-upload-area">
+                        <input type="file" id="file-input" name="image" accept="image/*" class="hidden">
+                        <div id="upload-prompt" class="upload-prompt">
+                            <div class="upload-icon-wrapper">
+                                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                            </div>
+                            <h4 class="upload-title">Drop your image here</h4>
+                            <p class="upload-subtitle">or click to browse</p>
+                            <button type="button" id="browse-btn" class="modern-btn-primary">
+                                <i class="fas fa-folder-open mr-2"></i>
+                                Select File
+                            </button>
+                        </div>
+                        <div id="upload-preview" class="hidden upload-preview">
+                            <div class="preview-image-container">
+                                <img id="preview-image" class="preview-image">
+                            </div>
+                            <div class="preview-details">
+                                <p id="file-name" class="file-name"></p>
+                                <button type="button" id="change-image" class="change-btn">
+                                    <i class="fas fa-sync-alt mr-2"></i>Change Image
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                <div id="upload-requirements" class="requirements-card">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                        <span class="font-medium">Upload Guidelines</span>
+                    </div>
+                    <ul class="requirements-list">
+                        <li><i class="fas fa-check text-emerald-500"></i>Max size: 10MB</li>
+                        <li><i class="fas fa-check text-emerald-500"></i>Formats: JPG, PNG</li>
+                        <li><i class="fas fa-check text-emerald-500"></i>Well-lit, clear images</li>
+                        <li><i class="fas fa-check text-emerald-500"></i>Focus on affected areas</li>
+                    </ul>
+                </div>
+                
+                <div class="action-buttons">
+                    <button id="analyze-btn" class="analyze-btn" disabled>
+                        <div class="btn-content">
+                            <i class="fas fa-microscope mr-2"></i>
+                            <span>Analyze with AI</span>
+                        </div>
+                        <div class="btn-loader hidden">
+                            <div class="loader-spinner"></div>
+                            <span>Analyzing...</span>
+                        </div>
+                    </button>
+                    <button id="clear-btn" class="clear-btn hidden">
+                        <i class="fas fa-times mr-2"></i>Clear
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Information Panel -->
+            <div class="info-card">
+                <div id="info-panel">
+                    <div class="card-header">
+                        <div class="flex items-center space-x-3">
+                            <div class="icon-container bg-blue-100 dark:bg-blue-900">
+                                <i class="fas fa-brain text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <h3 class="card-title">How AI Analysis Works</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4 class="step-title">Image Processing</h4>
+                                <p class="step-description">Advanced preprocessing optimizes your image for neural network analysis</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4 class="step-title">AI Detection</h4>
+                                <p class="step-description">Deep learning models identify disease patterns and symptoms</p>
+                            </div>
+                        </div>
+                        
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4 class="step-title">Expert Results</h4>
+                                <p class="step-description">Receive detailed diagnostics with treatment recommendations</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tips-section">
+                        <div class="tips-header">
+                            <i class="fas fa-lightbulb text-amber-500 mr-2"></i>
+                            <span class="font-semibold">Photography Tips</span>
+                        </div>
+                        <div class="tips-grid">
+                            <div class="tip-item">
+                                <i class="fas fa-sun text-yellow-500"></i>
+                                <span>Natural lighting</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-focus-alt text-purple-500"></i>
+                                <span>Sharp focus</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-crop-alt text-green-500"></i>
+                                <span>Fill the frame</span>
+                            </div>
+                            <div class="tip-item">
+                                <i class="fas fa-palette text-pink-500"></i>
+                                <span>True colors</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Loading Panel -->
+                <div id="loading-panel" class="hidden loading-panel">
+                    <div class="loading-content">
+                        <div class="loading-animation">
+                            <div class="scanning-line"></div>
+                            <div class="dna-helix"></div>
+                        </div>
+                        <h3 class="loading-title">AI Analysis in Progress</h3>
+                        <p class="loading-subtitle">Processing image with deep learning algorithms</p>
+                        <div class="progress-container">
+                            <div class="progress-track">
+                                <div id="progress-bar" class="progress-fill"></div>
+                            </div>
+                            <p id="progress-text" class="progress-text">Initializing...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section (initially hidden) -->
+        <section id="results-section" class="hidden mb-12">
+            <div class="results-section">
+                <div class="card-header">
+                    <div class="flex items-center space-x-3">
+                        <div class="icon-container bg-emerald-100 dark:bg-emerald-900">
+                            <i class="fas fa-clipboard-check text-emerald-600 dark:text-emerald-400"></i>
+                        </div>
+                        <h3 class="card-title">Analysis Results</h3>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Image Card -->
+                    <div class="md:col-span-1">
+                        <div class="results-card">
+                            <h4 class="font-semibold text-center mb-3 text-gray-700 dark:text-gray-300">Analyzed Image</h4>
+                            <img id="result-image" class="max-h-64 mx-auto rounded-lg border border-gray-200 dark:border-gray-600" src="">
+                        </div>
+                    </div>
+                    
+                    <!-- Results Card -->
+                    <div class="md:col-span-2">
+                        <div id="primary-result" class="primary-result">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-bold text-lg text-gray-900 dark:text-gray-100" id="disease-name">Disease Name</h4>
+                                <span class="text-white text-sm px-3 py-1 rounded-full" id="confidence-score">80% Confidence</span>
+                            </div>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4" id="disease-description">Disease description will appear here with details about symptoms and characteristics.</p>
+                            
+                            <!-- Symptoms -->
+                            <div class="mb-4">
+                                <h5 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Symptoms:</h5>
+                                <ul class="space-y-1 text-sm" id="symptoms-list">
+                                    <!-- Will be populated by JavaScript -->
+                                </ul>
+                            </div>
+                            
+                            <!-- Treatment -->
+                            <div class="border-t border-gray-200 dark:border-gray-600 pt-3 mt-3">
+                                <h5 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Recommended Treatment:</h5>
+                                <ul class="space-y-2 text-sm" id="treatment-recommendations">
+                                    <!-- Will be populated by JavaScript -->
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div id="other-possibilities" class="mb-4">
+                            <h4 class="font-semibold text-gray-700 dark:text-gray-300 mb-2">Other Possibilities:</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="alternative-diseases">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4 mt-6">
+                            <button id="download-report" class="modern-btn-primary">
+                                <i class="fas fa-download mr-2"></i>Download Report
+                            </button>
+                            <button id="new-analysis" class="modern-btn-secondary">
+                                <i class="fas fa-redo mr-2"></i>New Analysis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Error Message Section (initially hidden) -->
+        <section id="error-section" class="hidden mb-12">
+            <div class="error-section p-6 rounded-xl">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-exclamation-triangle text-red-600 text-xl mr-3"></i>
+                    <h3 class="text-lg font-semibold text-red-800 dark:text-red-200">Analysis Error</h3>
+                </div>
+                <p id="error-message" class="text-red-700 dark:text-red-300 mb-4">An error occurred during analysis.</p>
+                <button id="retry-btn" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition">
+                    <i class="fas fa-redo mr-2"></i>Try Again
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="mb-4">&copy; 2024 Palm Tree Disease Detector. Advanced AI-powered plant health diagnostics.</p>
+            <p class="text-gray-400 text-sm">
+                <i class="fas fa-info-circle mr-1"></i>
+                This tool provides guidance only. For serious plant health concerns, consult a professional arborist or plant pathologist.
+            </p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
